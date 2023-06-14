@@ -12,12 +12,25 @@ class SimpleFilter(models.Model):
     # required fields
     questionRef = models.ForeignKey(Question, on_delete=models.CASCADE)
     answerValue = models.IntegerField() # [0, 11]
-    effect = models.IntegerField() # [0, 1]
+    effect = models.IntegerField(default=0) # [0, 1]
+    effectStrength = models.IntegerField(default=0) # [0, 10]
     # effect legend:
     # 0 -> decrease likelihood of recommendation
     # 1 -> increase likelihood of recommendation
 
     # optional fields
+
+    def __str__(self):
+        effect_string = ""
+        if self.effect == 0:
+            effect_string = "\ndecrease recommendation likelihood"
+        elif self.effect == 1:
+            effect_string = "\nincrease recommendation likelihood"
+
+        ret_string = "Strength: " + str(self.effectStrength) + effect_string + " ------- Question: " + self.questionRef.question + ", Answer: " + str(self.answerValue)
+
+        # ret_string = "Question: " + self.questionRef.question + ", Answer: " + str(self.answerValue) + ", Effect: " + effect_string
+        return ret_string
 
 
 
