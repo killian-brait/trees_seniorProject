@@ -42,3 +42,7 @@ class FilterRef(models.Model):
     # optional fields
     date = models.DateTimeField(auto_now_add=True, blank=True)
     time = models.DateTimeField(auto_now_add=True, blank=True)
+
+    def __str__(self):
+        ret_string = "User: " + self.userRef.username + ", Filter: " + str(self.simpleFilterRef)
+        return ret_string

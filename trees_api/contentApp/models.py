@@ -57,3 +57,6 @@ class Step(models.Model):
     title = models.CharField(max_length=100, blank=True)
     description = models.CharField(max_length=100, blank=True)
     video = models.ForeignKey(Video, on_delete=models.CASCADE, blank=True, null=True)
+
+    def __str__(self):
+        return "Step: " + self.title + ", Step Number: " + str(self.step_number) + ", Description: " + self.description + ", Video: " + str(self.video)

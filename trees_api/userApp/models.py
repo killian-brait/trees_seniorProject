@@ -44,6 +44,10 @@ class Answer(models.Model):
     date = models.DateTimeField(auto_now_add=True, blank=True)
     time = models.DateTimeField(auto_now_add=True, blank=True)
 
+    def __str__(self):
+        ret_string = "Answer: " + str(self.slide_val)
+        return ret_string
+
 
 
 # Current Answer model
