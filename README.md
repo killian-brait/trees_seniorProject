@@ -13,8 +13,8 @@ users will get better content recommendations and rate content and engage with i
 ```bash
 git clone <project-url>
 cd trees_api
-python -m venv venv <optional: venv>
-conda create -n trees_api python=3.10 <optional: conda> 
+<optional: venv> (python -m venv venv)
+<optional: conda> (conda create -n trees_api python=3.10)
 pip install -r requirements.txt
 python manage.py runserver
 ```
