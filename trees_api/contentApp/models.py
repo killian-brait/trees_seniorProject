@@ -23,6 +23,9 @@ class Content(models.Model):
         constraints = [
             UniqueConstraint(fields=['title', 'content_type'], name='unique_content')
         ]
+
+    def __str__(self):
+        return "Content: " + self.title + ", Type: " + self.content_type + ", Category: " + self.category
     
 
 class Video(models.Model):
@@ -35,7 +38,11 @@ class Video(models.Model):
     url = models.CharField(max_length=100)
 
     # optional fields
+    title = models.CharField(max_length=100, blank=True)
     thumbnail = models.CharField(max_length=100, blank=True)
+
+    def __str__(self):
+        return "Video: " + self.title + ", URL: " + self.url
 
 
 class Step(models.Model):
