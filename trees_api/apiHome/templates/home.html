@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Django App</title>
+    <!-- Add any required CSS stylesheets or external libraries -->
+    <style>
+        {% load static %}
+        @import url("{% static 'style_project/styles.css' %}");
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Django App</h1>
+    </header>
+    <nav>
+        <ul>
+            <!-- <li><a href="{% url 'userApp:users' %}">User App</a></li>
+            <li><a href="{% url 'contentApp:contents' %}">Content App</a></li>
+            <li><a href="{% url 'filterApp:simplefilters' %}">Filter App</a></li>
+            <li><a href="{% url 'questionApp:questions' %}">Question App</a></li> -->
+            <!-- Add more links to your other apps as needed -->
+        </ul>
+    </nav>
+    <main>
+        <!-- Add your main content here -->
+    </main>
+    <footer>
+        <p>&copy; 2023 My Django App. All rights reserved.</p>
+    </footer>
+    <!-- Add any required JavaScript files or scripts -->
+    <script>
+        // Add custom JavaScript code here
+    </script>
+</body>
+</html>

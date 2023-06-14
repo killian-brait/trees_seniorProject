@@ -17,8 +17,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+from rest_framework import routers
+
+router = routers.DefaultRouter()
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('userApp.urls')),
+    path('', include('contentApp.urls')),
+    path('', include('filterApp.urls')),
+    path('', include('questionApp.urls')),
+    # path('', include('apiHome.urls')),
+    path('api/userApp/', include('userApp.urls')),
+    path('api/contentApp/', include('contentApp.urls')),
+    path('api/filterApp/', include('filterApp.urls')),
+    path('api/questionApp/', include('questionApp.urls')),
     # path(r'api/', include('questionApp.urls')),
 ]
