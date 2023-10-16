@@ -11,6 +11,7 @@ class Content(models.Model):
     title = models.CharField(max_length=100)
     content_type = models.CharField(max_length=100)
     category = models.CharField(max_length=100)
+    score = models.IntegerField(default=0)
 
     # normalized fields
     normal_type = models.IntegerField() # 0 for video, 1 for step

@@ -4,7 +4,7 @@ from .models import Content, Step, Video
 
 # Admin Models
 class ContentAdmin(admin.ModelAdmin):
-    list_display = ('id', 'title', 'content_type', 'category', 'normal_type')
+    list_display = ('id', 'title', 'score', 'content_type', 'category', 'normal_type')
     ordering = ['id']
 
 class StepAdmin(admin.ModelAdmin):
