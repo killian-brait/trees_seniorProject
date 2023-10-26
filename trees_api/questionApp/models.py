@@ -11,13 +11,15 @@ class Question(models.Model):
     # trees_internal id
     id = models.AutoField(primary_key=True)
 
+    # machine learning/GPT fields
+    isBig5 = models.BooleanField(default=False) # True if this is a big5 personality question
+    big5cat = models.CharField(max_length=100, default="") # Only set if isBig5 is true, otherwise "n/a" or missing_val
+
     # required fields
     reversed = models.BooleanField() # True if the slider is reversed, False if the slider is normal
     isNormal = models.BooleanField() # True if slider has 11 values, False otherwise
     num_vals = models.IntegerField() # number of values on the slider [1, 11]
     question = models.CharField(max_length=100) # question text
-
-
 
     # optional fields
     more_info = models.TextField(blank=True)
